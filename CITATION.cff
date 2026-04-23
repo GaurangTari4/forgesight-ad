@@ -3,9 +3,8 @@ message: "If you use this repository, please cite it using the metadata below."
 title: "ForgeSight AD: Industrial Anomaly Detection Studio"
 type: software
 authors:
-  - family-names: "Gaurav"
-    given-names: ""
-repository-code: "https://github.com/<your-username>/<your-repo-name>"
+  - family-names: "Gaurang Tari"
+repository-code: "https://github.com/GaurangTari4/forgesight-ad"
 license: "MIT"
 version: "1.0.0"
 date-released: "2026-04-21"
