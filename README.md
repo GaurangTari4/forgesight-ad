@@ -193,33 +193,6 @@ The run writes artifacts to your existing comparison pipeline output folder (or 
 - markdown summary report
 - demo-ready `model.pt` artifacts per backbone/category
 
-## Publish to GitHub
-
-After reviewing files locally:
-
-```bash
-git init
-git add .
-git commit -m "Initial configurable ResNet backbone selection repo"
-git branch -M main
-git remote add origin <your-github-repo-url>
-git push -u origin main
-```
-
-## Suggested GitHub Topics
-
-Add these topics in your GitHub repo settings for better discoverability:
-
-- `anomaly-detection`
-- `computer-vision`
-- `industrial-inspection`
-- `quality-control`
-- `deep-learning`
-- `pytorch`
-- `resnet`
-- `mvtec`
-- `unsupervised-learning`
-- `gradio`
 
 ## Troubleshooting
 
