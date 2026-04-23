@@ -1,0 +1,34 @@
+﻿{
+  "profiles": [
+    {
+      "name": "laptop_low_vram",
+      "vram_gb": 4,
+      "recommended_backbone": "resnet18",
+      "notes": "Fastest option, reduced memory pressure"
+    },
+    {
+      "name": "midrange_gpu_fast",
+      "vram_gb": 6,
+      "recommended_backbone": "resnet34",
+      "notes": "Good speed/quality tradeoff for moderate VRAM"
+    },
+    {
+      "name": "midrange_gpu",
+      "vram_gb": 8,
+      "recommended_backbone": "resnet50",
+      "notes": "Balanced speed and anomaly quality"
+    },
+    {
+      "name": "workstation_high_vram",
+      "vram_gb": 16,
+      "recommended_backbone": "resnet101",
+      "notes": "Favors quality over throughput"
+    },
+    {
+      "name": "workstation_max_quality",
+      "vram_gb": 24,
+      "recommended_backbone": "resnet152",
+      "notes": "Highest depth option when memory and latency budget allow"
+    }
+  ]
+}

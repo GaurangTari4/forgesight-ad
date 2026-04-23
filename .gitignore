@@ -1,0 +1,13 @@
+﻿__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+.env
+*.pt
+*.npz
+artifacts/
+artifacts_*/
+outputs.txt
+*.log

@@ -1,0 +1,18 @@
+﻿cff-version: 1.2.0
+message: "If you use this repository, please cite it using the metadata below."
+title: "ForgeSight AD: Industrial Anomaly Detection Studio"
+type: software
+authors:
+  - family-names: "Gaurav"
+    given-names: ""
+repository-code: "https://github.com/<your-username>/<your-repo-name>"
+license: "MIT"
+version: "1.0.0"
+date-released: "2026-04-21"
+keywords:
+  - anomaly-detection
+  - industrial-inspection
+  - computer-vision
+  - resnet
+  - mvtec
+
