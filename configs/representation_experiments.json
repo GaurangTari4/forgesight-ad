@@ -1,0 +1,21 @@
+{
+  "protocol_id": "representation_experiments_v1_prespecified",
+  "selection_rule": "No configuration may be selected using previously examined MVTec test labels. Improvements require independent development data and a final untouched evaluation set.",
+  "split": {"seed": 42, "fitting": "training-good only", "calibration": "disjoint training-good only"},
+  "patchcore_variants": [
+    {"backbone": "resnet18", "feature_layers": ["layer2", "layer3"], "memory_bank_size": 256, "candidate_size": 8192},
+    {"backbone": "resnet18", "feature_layers": ["layer2", "layer3"], "memory_bank_size": 512, "candidate_size": 8192},
+    {"backbone": "resnet18", "feature_layers": ["layer2", "layer3"], "memory_bank_size": 1024, "candidate_size": 8192},
+    {"backbone": "resnet18", "feature_layers": ["layer2", "layer3"], "memory_bank_size": 2048, "candidate_size": 8192},
+    {"backbone": "resnet50", "feature_layers": ["layer2", "layer3"], "memory_bank_size": 256, "candidate_size": 8192},
+    {"backbone": "resnet18", "feature_layers": ["layer1", "layer2", "layer3"], "memory_bank_size": 256, "candidate_size": 8192}
+  ],
+  "v2_variants": [
+    {"feature_layers": ["layer1"], "score_weights": [1.0]},
+    {"feature_layers": ["layer2"], "score_weights": [1.0]},
+    {"feature_layers": ["layer3"], "score_weights": [1.0]},
+    {"feature_layers": ["layer4"], "score_weights": [1.0]},
+    {"feature_layers": ["layer1", "layer2", "layer3", "layer4"], "score_weights": [0.4, 0.3, 0.2, 0.1]}
+  ],
+  "synthetic_anomalies": ["small_local", "low_contrast", "thin_scratch", "color_shift", "localized_change"]
+}

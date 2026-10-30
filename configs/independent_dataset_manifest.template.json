@@ -1,0 +1,27 @@
+{
+  "schema_version": "forgesight-independent-dataset-v1",
+  "dataset_id": "replace-with-collected-screw-or-bottle-dataset-id",
+  "final_evaluation_immutable": true,
+  "final_evaluation_sealed_at": "YYYY-MM-DDThh:mm:ssZ",
+  "provenance": {
+    "collection_site": "replace-with-site-or-line",
+    "camera": "replace-with-camera-and-lens",
+    "collection_window": "YYYY-MM-DD to YYYY-MM-DD",
+    "independent_from_historical_mvtec_tests": true,
+    "lighting_specification": "replace-with-lux/color-temperature/fixture",
+    "pose_and_position_specification": "replace-with-orientation/camera-distance/tolerances",
+    "acceptable_normal_variation": "replace-with-material/finish/lot/lighting limits"
+  },
+  "splits": {
+    "fitting": [{"image": "images/fitting_normal_001.png", "image_label": "normal"}],
+    "calibration": [{"image": "images/calibration_normal_001.png", "image_label": "normal"}],
+    "development": [
+      {"image": "images/development_normal_001.png", "image_label": "normal"},
+      {"image": "images/development_defect_001.png", "mask": "masks/development_defect_001.png", "image_label": "defect", "defect_subtype": "scratch"}
+    ],
+    "final_evaluation": [
+      {"image": "images/final_normal_001.png", "image_label": "normal"},
+      {"image": "images/final_defect_001.png", "mask": "masks/final_defect_001.png", "image_label": "defect", "defect_subtype": "scratch"}
+    ]
+  }
+}

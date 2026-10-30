@@ -4,11 +4,11 @@ import argparse
 from pathlib import Path
 import sys
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
+PROJECT_ROOT = Path(__file__).resolve().parent
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from resnet_compare.resnet_backbone_comparison_pipeline import (  # noqa: E402
+from forgesight_ad.backbone_pipeline import (
     ResNetBackboneConfig,
     SUPPORTED_BACKBONES,
     run_comparison,
@@ -22,12 +22,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--backbones", type=str, default=",".join(SUPPORTED_BACKBONES))
     parser.add_argument("--categories", type=str, default="")
     parser.add_argument("--image-size", type=int, default=256)
-    parser.add_argument("--batch-size", type=int, default=8)
+    parser.add_argument("--batch-size", type=int, default=2, help="Sequential-evaluation default suitable for a 6 GB GPU.")
     parser.add_argument("--num-workers", type=int, default=0)
     parser.add_argument("--top-k-ratio", type=float, default=0.005)
     parser.add_argument("--seed", type=int, default=42)
-    parser.add_argument("--dataset-root", type=Path, default=PROJECT_ROOT / "mvtec-ad" / "versions" / "2")
-    parser.add_argument("--artifacts-root", type=Path, default=PROJECT_ROOT / "artifacts_resnet_compare")
+    parser.add_argument("--dataset-root", type=Path, required=True, help="MVTec-style dataset root.")
+    parser.add_argument("--artifacts-root", type=Path, required=True, help="Output root; historical artifacts are never overwritten.")
+    parser.add_argument("--allow-random-init", action="store_true", help="Explicitly permit untrained ResNet features when pretrained weights are unavailable.")
     return parser.parse_args()
 
 
@@ -68,6 +69,7 @@ def main() -> None:
         num_workers=args.num_workers,
         top_k_ratio=args.top_k_ratio,
         seed=args.seed,
+        allow_random_init=args.allow_random_init,
     )
 
     print(f"Mode: {args.mode}")

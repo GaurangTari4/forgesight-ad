@@ -1,0 +1,26 @@
+.git/
+.github/
+.venv/
+.onnx-deps/
+runtime_cache/
+# Keep only the audited Linux CPython 3.11 wheelhouse in the Docker context.
+wheelhouse/*
+!wheelhouse/linux-cp311/
+!wheelhouse/linux-cp311/**
+__pycache__/
+**/__pycache__/
+*.py[cod]
+.pytest-tmp/
+pytest_*/
+validation_runs/
+artifacts/
+artifacts_*/
+outputs.txt
+*.log
+.env
+tests/
+docs/
+README.md
+requirements-dev.txt
+pytest.ini
+configs/

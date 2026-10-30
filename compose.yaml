@@ -1,0 +1,26 @@
+services:
+  forgesight:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: forgesight:local
+    container_name: forgesight-local
+    gpus: all
+    environment:
+      FORGESIGHT_DEVICE: cuda:0
+      FORGESIGHT_SERVER_HOST: 0.0.0.0
+      FORGESIGHT_SERVER_PORT: "7860"
+      FORGESIGHT_ARTIFACTS_ROOT: /opt/forgesight/historical_artifacts
+      TORCH_HOME: /tmp/forgesight_torch_cache
+      MPLCONFIGDIR: /tmp/forgesight_matplotlib
+      XDG_CACHE_HOME: /tmp/forgesight_cache
+      FORGESIGHT_OFFLINE_WEIGHTS: "1"
+      NO_PROXY: 127.0.0.1,localhost,::1
+      no_proxy: 127.0.0.1,localhost,::1
+    ports:
+      - "127.0.0.1:7860:7860"
+    volumes:
+      - ./artifacts:/opt/forgesight/artifacts:ro
+      - ../artifacts_resnet_compare:/opt/forgesight/historical_artifacts:ro
+      - ./runtime_cache:/tmp/forgesight_torch_cache:ro
+    restart: "no"

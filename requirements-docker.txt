@@ -1,0 +1,14 @@
+# Torch/TorchVision and CUDA are supplied by the pinned PyTorch CUDA base image.
+# Keep these runtime packages aligned with requirements.txt.
+numpy==1.26.4
+pandas==2.2.3
+matplotlib==3.9.2
+scikit-learn==1.5.2
+pillow==10.4.0
+gradio==5.4.0
+gradio-client==1.4.2
+fastapi==0.115.6
+starlette==0.41.3
+pydantic==2.10.6
+httpx==0.28.1
+huggingface-hub==0.25.2
